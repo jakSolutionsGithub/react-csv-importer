@@ -180,3 +180,63 @@ export const deDE: ImporterLocale = {
     processedRowsLabel: 'Verarbeitete Zeilen:'
   }
 };
+
+export const frFR: ImporterLocale = {
+  general: {
+    goToPreviousStepTooltip: 'Aller à l\'étape précédente'
+  },
+
+  fileStep: {
+    initialDragDropPrompt:
+      'Glissez le fichier CSV ici, ou cliquez pour sélectionner le fichier CSV',
+    activeDragDropPrompt: 'Déposez le fichier CSV ici...',
+
+    getImportError: (message) => `Erreur import: ${message}`,
+    getDataFormatError: (message) => `Veuillez vérifier le formatage des données: ${message}`,
+    goBackButton: 'Retour',
+    nextButton: 'Choix des colonnes',
+
+    rawFileContentsHeading: 'Contenu du fichier brut',
+    previewImportHeading: 'Aperçu de l\'import',
+    dataHasHeadersCheckbox: 'Le fichier comporte un en-tête',
+    previewLoadingStatus: 'Chargement de l\'aperçu...'
+  },
+
+  fieldsStep: {
+    stepSubtitle: 'Sélectionnez les colonnes',
+    requiredFieldsError: 'Veuillez attribuer tous les champs obligatoires',
+    nextButton: 'Import',
+
+    dragSourceAreaCaption: 'Colonnes à importer',
+    getDragSourcePageIndicator: (currentPage: number, pageCount: number) =>
+      `Page ${currentPage} de ${pageCount}`,
+    getDragSourceActiveStatus: (columnCode: string) =>
+      `Attribuer la colonne ${columnCode}`,
+    nextColumnsTooltip: 'Afficher les colonnes suivantes',
+    previousColumnsTooltip: 'Afficher les colonnes précédentes',
+    clearAssignmentTooltip: 'Effacer l\'affectation des colonnes',
+    selectColumnTooltip: 'Sélectionner la colonne à affectater',
+    unselectColumnTooltip: 'Désélectionner la colonne',
+
+    dragTargetAreaCaption: 'Champs cibles',
+    getDragTargetOptionalCaption: (field) => `${field} (optionnel)`,
+    getDragTargetRequiredCaption: (field) => `${field} (requis)`,
+    dragTargetPlaceholder: 'Faites glisser la colonne ici',
+    getDragTargetAssignTooltip: (columnCode: string) =>
+      `Attribuer la colonne ${columnCode}`,
+    dragTargetClearTooltip: 'Effacer l\'affectation de la colonne',
+
+    columnCardDummyHeader: 'Champ non attribué',
+    getColumnCardHeader: (code) => `Colonne ${code}`
+  },
+
+  progressStep: {
+    stepSubtitle: 'Import',
+    uploadMoreButton: 'Télécharger plus',
+    finishButton: 'Fini',
+    statusError: 'Impossible d\'importer',
+    statusComplete: 'Complet',
+    statusPending: 'Import en cours...',
+    processedRowsLabel: 'Lignes traitées:'
+  }
+};
